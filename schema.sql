@@ -80,6 +80,22 @@ CREATE TABLE IF NOT EXISTS orderdetails (
   KEY productCode (productCode)  
 );
 
+
+-- Table structure for table orders
+
+DROP TABLE IF EXISTS orders;
+
+CREATE TABLE orders (
+  orderNumber int(11) NOT NULL,
+  orderDate date NOT NULL,
+  requiredDate date NOT NULL,
+  shippedDate date DEFAULT NULL,
+  status varchar(15) NOT NULL,
+  comments text,
+  customerNumber int(11) NOT NULL,
+  PRIMARY KEY (orderNumber)
+);
+
 /*Table structure for table payments*/
 
 DROP TABLE IF EXISTS payments;
